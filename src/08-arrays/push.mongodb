@@ -1,0 +1,28 @@
+use("platzi_store")
+
+
+// remove 1 element from array
+// db.inventory.updateMany(
+//     {}, {
+//         $pull: {
+//             tags: "book"
+
+//         }
+        
+//     }
+// )
+
+// remove other elements in array
+
+db.inventory.updateMany(
+    {}, {
+        $pull: {
+            tags: {
+                $in: ["appliance", "school"]
+            }
+
+        }
+        
+    }
+)
+
